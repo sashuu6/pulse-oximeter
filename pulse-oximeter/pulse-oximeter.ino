@@ -2,7 +2,7 @@
  * Project Name - Pulse Oximeter
  * Created by - Sashwat K
  * Created on - 09/05/2021 11:00:00
- * Modified on - 09/05/2021 11:00:00
+ * Modified on - 09/05/2021 15:43:00
  * GitHub link - https://github.com/sashuu6/pulse-oximeter
  */
 
@@ -105,5 +105,19 @@ void handle_NotFound(){
 
 String SendHTML(int heartbeat,int spo2){
    String ptr = "<!DOCTYPE html> <html>\n";
+   ptr +="<head><title>Pulse oximeter</title>\n";
+   ptr +="<style>.styled-table {border-collapse: collapse;margin: 25px 0;font-size: 0.9em;font-family: sans-serif;min-width: 400px;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);}\n";
+   ptr +=".styled-table thead tr {background-color: #009879;color: #ffffff;text-align: left;}\n";
+   ptr += ".styled-table th,.styled-table td {padding: 12px 15px;}\n";
+   ptr += ".styled-table tbody tr {border-bottom: 1px solid #dddddd;}\n";
+   ptr += ".styled-table tbody tr:nth-of-type(even) {background-color: #f3f3f3;}\n";
+   ptr += ".styled-table tbody tr:last-of-type {border-bottom: 2px solid #009879;}\n";
+   ptr += ".styled-table tbody tr.active-row {ont-weight: bold;color: #009879;}</style></head>\n";
+   ptr += "<body><table class=\"styled-table\"><thead><tr><th>Fields</th><th>Value</th></tr></thead>\n";
+   ptr += "<tbody><tr><td>Name</td><td contentEditable>Sashwat K</td></tr>\n";
+   ptr += "<tr><td>Heatbeat</td><td>" + (int)heartbeat + "</td></tr>\n";
+   ptr += "<tr><td>SPO2</td><td>" + (int)spo2 + "</td></tr>\n";
+   ptr += "<tr><td colspan=\"2\"><center><button onclick=\"window.print();\">Print</button></center></td></tr>\n";
+   ptr += "</tbody></table></body></html>\n";
    return ptr;
 }
