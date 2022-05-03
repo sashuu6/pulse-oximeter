@@ -26,9 +26,13 @@ This project is DIY pulse oximeter sensor developed using MAX30100 sensor.
 
 ### Top Design
 
+![Pulse Oximeter - top PCB](docs/pcb_front.jpeg)
+
 ![Pulse Oximeter - top](docs/top.png)
 
 ### Bottom Design
+
+![Pulse Oximeter - bottom PCB](docs/pcb_back.jpeg)
 
 ![Pulse Oximeter - bottom](docs/bottom.png)
 
